@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MegaRewards Pro</title>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script> here, then put <ins class="adsbygoogle"> units inside the .ad boxes. -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<style>
+:root{--g:#22c55e;--bg:#08100b;--c:#0f1a13;--b:#1c2c22;--t:#e8f5ec;--m:#7f9a8b}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--t);font:15px/1.5 system-ui,sans-serif;min-height:100vh}
+body.ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1}
+#app{max-width:480px;margin:auto;padding:12px 12px 84px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:16px;padding:14px;margin:12px 0}
+h3{margin-bottom:8px}small,.m{color:var(--m)}
+.btn{display:block;width:100%;background:var(--g);color:#04130a;border:0;border-radius:12px;padding:12px;margin-top:8px;font:inherit;font-weight:700;cursor:pointer;transition:transform .1s,box-shadow .2s}
+.btn:active{transform:scale(.97)}.btn:hover{box-shadow:0 0 16px #22c55e66}.btn:disabled{opacity:.4}
+.btn2{background:var(--b);color:var(--t)}
+.btn.s{display:inline-block;width:auto;margin:0;padding:6px 12px}
+input,select{width:100%;padding:12px;margin-top:8px;border-radius:10px;border:1px solid var(--b);background:#0a120d;color:var(--t);font:inherit}
+input:focus,select:focus{outline:2px solid var(--g)}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:auto;display:flex;background:#0a120d;border-top:1px solid var(--b);z-index:5}
+nav button{flex:1;background:0;border:0;color:var(--m);padding:8px 0;font:inherit;font-size:11px;line-height:1.3}
+nav .a{color:var(--g)}
+.ad{margin:12px auto;border:1px dashed #2a4033;display:flex;align-items:center;justify-content:center;color:#3f5c4b;font-size:12px}
+.a300{width:300px;height:250px}.a320{width:320px;height:50px}.a728{display:none;width:728px;height:90px}
+@media(min-width:768px){.a728{display:flex}}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 6px;border-bottom:1px solid var(--b)}
+.row:last-child{border:0}.me{background:#22c55e22;border-radius:8px}.cd{color:var(--m);font-variant-numeric:tabular-nums}
+.bar{height:8px;background:#1a271f;border-radius:9px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--g);transition:width .6s}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;direction:ltr}
+.cal i{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#1a231d;color:var(--m);font-style:normal;font-size:12px}
+.cal .on{background:var(--g);color:#04130a;font-weight:700}.cal .today{outline:2px solid var(--g);outline-offset:1px}
+#mod{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:9}#mod.s{display:flex}
+.mb{background:var(--c);border:1px solid var(--g);border-radius:16px;padding:16px;width:min(92vw,420px);max-height:90vh;overflow:auto;animation:pop .25s}
+@keyframes pop{from{opacity:0;transform:scale(.92)}}
+#ts{position:fixed;top:12px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;z-index:99;pointer-events:none}
+.toast{background:#0f1a13;border:1px solid var(--g);padding:10px 16px;border-radius:12px;animation:pop .25s;max-width:90vw}.toast.e{border-color:#ef4444}
+.q{font-size:18px;text-align:center;margin:8px 0}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.g3{display:grid;grid-template-columns:repeat(3,70px);gap:14px;justify-content:center;margin:12px 0}
+.mc{aspect-ratio:1;font-size:26px;background:var(--b);border:0;border-radius:10px;color:var(--t)}
+.dot{aspect-ratio:1;border-radius:50%;border:2px solid var(--b);background:#0a120d;transition:.2s}.dot.on{background:var(--g);box-shadow:0 0 16px var(--g)}
+.arena{position:relative;height:240px;background:#0a120d;border-radius:12px;overflow:hidden}
+.arena button{position:absolute;font-size:34px;background:0;border:0;transition:.3s}
+.wheel{width:220px;height:220px;border-radius:50%;margin:6px auto;border:4px solid var(--g);background:conic-gradient(#22c55e 0 60deg,#0a120d 0 120deg,#16a34a 0 180deg,#1c2c22 0 240deg,#22c55e 0 300deg,#0a120d 0);transition:transform 4s cubic-bezier(.2,.8,.2,1)}
+.ptr{text-align:center;color:var(--g);font-size:24px}.stars{font-size:38px;text-align:center;color:#facc15}.stars span{cursor:pointer}
+.prize{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#16a34a44;border-radius:12px;font-size:20px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="ad a728">728x90</div>
+<div id="app"></div><nav id="nav"></nav>
+<div id="mod"><div class="mb"><h3 id="mt"></h3><div id="mg"></div><button class="btn btn2" id="mc" onclick="closeM()"></button></div></div>
+<div id="ts"></div>
+<script>
+/* API contract (server is the source of truth for points, cooldowns, referrals):
+   POST /register {email,password,referral?} -> {token,user}    POST /login {email,password} -> {token,user}
+   POST /task/complete {task,day} -> {user}   POST /draw/enter {} -> {user,ticket}
+   POST /withdraw {method,amount,account} -> {user}   POST /referral {} -> {count}
+   GET /leaderboard -> {users:[{name,code,points}]} (top 10)
+   user = {email,code,points,referrals,last:{taskId:ms},days:['YYYY-MM-DD'],tickets:[],withdrawals:[{method,amount,account,status,date}]}
+   Send Authorization: Bearer <token> (added automatically). */
+const API_BASE="https://megarewards-api.onrender.com";
+const USE_API=true;
+const $=s=>document.querySelector(s),rnd=n=>Math.floor(Math.random()*n),pick=a=>a[rnd(a.length)],shuf=a=>[...a].sort(()=>Math.random()-.5);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+const L={en:{login:'Login',register:'Register',email:'Email',pass:'Password (6+ characters)',ref:'Referral code (optional)',noacc:'No account? Register',haveacc:'Have an account? Login',home:'Home',tasks:'Tasks',prizes:'Prizes',wallet:'Wallet',board:'Top 10',points:'Points',pts:'pts',cal:'Activity',mycode:'Your referral code',copy:'Copy code',copied:'Copied!',refs:'referrals (+50 pts each)',limit:'Limit Reached — 5/5 referrals',start:'Start',close:'Close',retry:'Try again',failed:'Not completed. Try again!',wrong:'Wrong answer',invalid:'Enter a valid email and a password of 6+ characters',err:'Server unavailable. Please try again.',small:'Small Prize · Rs. 5,000',bigger:'Smart Watch · Rs. 10,000',biggest:'iPhone Watch · Rs. 15,000',mega:'Apple iPhone · Rs. 20,000',draw:'Lucky Draw',drawinfo:'Each ticket costs 500 points.',enter:'Buy ticket & enter',need500:'You need 500 points',ticket:'Ticket',mytk:'My tickets',method:'Method',amount:'Amount (Rs.)',account:'Account number',submit:'Submit request',hist:'Withdrawal history',none:'Nothing here yet',wdinv:'Invalid amount or account, or not enough points',wdok:'Request submitted',loading:'Loading…',you:'You',ink:'What is the INK colour?',tap30:'Tap 30 times in 10 seconds!',lucky:'You scratched it! 🎉',spin:'Spin',watch:'Watch the pattern…',repeat:'Now repeat it!',rate:'Rate our app',pickrate:'Pick a rating first',lost:'The number was',thr:'Guess 1–100 · tries left:',done:'✓ Done'},
+ur:{login:'لاگ اِن',register:'رجسٹر',email:'ای میل',pass:'پاس ورڈ (کم از کم 6 حروف)',ref:'ریفرل کوڈ (اختیاری)',noacc:'اکاؤنٹ نہیں؟ رجسٹر کریں',haveacc:'اکاؤنٹ ہے؟ لاگ اِن کریں',home:'ہوم',tasks:'ٹاسکس',prizes:'انعامات',wallet:'والیٹ',board:'ٹاپ 10',points:'پوائنٹس',pts:'پوائنٹس',cal:'سرگرمی',mycode:'آپ کا ریفرل کوڈ',copy:'کوڈ کاپی کریں',copied:'کاپی ہو گیا!',refs:'ریفرلز (ہر ایک کے +50 پوائنٹس)',limit:'حد پوری ہو گئی — 5/5 ریفرلز',start:'شروع کریں',close:'بند کریں',retry:'دوبارہ کوشش کریں',failed:'مکمل نہیں ہوا۔ دوبارہ کوشش کریں!',wrong:'غلط جواب',invalid:'درست ای میل اور 6 یا زیادہ حروف کا پاس ورڈ درج کریں',err:'سرور دستیاب نہیں۔ دوبارہ کوشش کریں۔',small:'چھوٹا انعام · Rs. 5,000',bigger:'سمارٹ واچ · Rs. 10,000',biggest:'آئی فون واچ · Rs. 15,000',mega:'ایپل آئی فون · Rs. 20,000',draw:'لکی ڈرا',drawinfo:'ہر ٹکٹ کی قیمت 500 پوائنٹس ہے۔',enter:'ٹکٹ خریدیں اور شامل ہوں',need500:'500 پوائنٹس درکار ہیں',ticket:'ٹکٹ',mytk:'میرے ٹکٹ',method:'طریقہ',amount:'رقم (Rs.)',account:'اکاؤنٹ نمبر',submit:'درخواست بھیجیں',hist:'نکلوانے کی تاریخ',none:'ابھی کچھ نہیں',wdinv:'رقم یا اکاؤنٹ غلط ہے، یا پوائنٹس کافی نہیں',wdok:'درخواست جمع ہو گئی',loading:'لوڈ ہو رہا ہے…',you:'آپ',ink:'لکھائی کا رنگ کون سا ہے؟',tap30:'10 سیکنڈ میں 30 بار ٹیپ کریں!',lucky:'آپ نے سکریچ کر لیا! 🎉',spin:'گھمائیں',watch:'پیٹرن دیکھیں…',repeat:'اب دہرائیں!',rate:'ہماری ایپ کو ریٹ کریں',pickrate:'پہلے ریٹنگ منتخب کریں',lost:'نمبر تھا',thr:'1–100 بوجھیں · باقی کوششیں:',done:'✓ مکمل'}};
+const S={tab:'home',mode:'login',lang:'en',token:null,user:null};
+try{Object.assign(S,JSON.parse(localStorage.getItem('mr')||'{}'))}catch(e){}
+S.refq=new URLSearchParams(location.search).get('ref')||'';
+const t=k=>L[S.lang][k]||L.en[k]||k;
+const save=()=>{try{localStorage.setItem('mr',JSON.stringify({token:S.token,user:S.user,lang:S.lang}))}catch(e){}};
+const T=[],to=(f,m)=>{T.push(setTimeout(f,m))},iv=(f,m)=>{T.push(setInterval(f,m))},clearT=()=>{T.forEach(i=>{clearTimeout(i);clearInterval(i)});T.length=0};
+function toast(m,e){const d=document.createElement('div');d.className='toast'+(e?' e':'');d.textContent=m;$('#ts').append(d);setTimeout(()=>d.remove(),3200)}
+async function api(p,body,method){
+  if(!USE_API)throw Error(t('err'));
+  const c=new AbortController(),tm=setTimeout(()=>c.abort(),30000);
+  try{
+    const r=await fetch(API_BASE+p,{method:method||(body?'POST':'GET'),signal:c.signal,headers:{'Content-Type':'application/json',...(S.token?{Authorization:'Bearer '+S.token}:{})},body:body?JSON.stringify(body):undefined});
+    const j=await r.json().catch(()=>({}));
+    if(r.status==401&&S.token){logout();throw Error(j.error||t('err'))}
+    if(!r.ok)throw Error(j.error||j.message||t('err'));
+    return j
+  }catch(e){throw Error(e.name=='AbortError'||e instanceof TypeError?t('err'):e.message)}finally{clearTimeout(tm)}
+}
+const pad=n=>String(n).padStart(2,'0'),today=()=>{const d=new Date();return`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`};
+const fmt=ms=>{const s=Math.max(0,Math.ceil(ms/1e3));return`${pad(s/3600|0)}:${pad(s%3600/60|0)}:${pad(s%60)}`};
+
+/* ---------- mini-game helpers ---------- */
+function ask(b,gen,n,d){let i=0;const go=()=>{if(i>=n)return d(1);const g=gen();b.innerHTML=`<p class=q>${i+1}/${n} · ${g.q}</p><input autocomplete=off><button class=btn>OK</button>`;const inp=b.querySelector('input');inp.focus();b.querySelector('.btn').onclick=()=>{if(inp.value.trim().toLowerCase()==g.a){i++;go()}else{toast(t('wrong'),1);d(0)}}};go()}
+function quiz(b,qs,need,d){let i=0,ok=0;const go=()=>{if(i>=qs.length)return d(ok>=need);const q=qs[i];b.innerHTML=`<p class=q>${q.q}</p>`+shuf(q.o.map((_,j)=>j)).map(j=>`<button class="btn btn2" data-j=${j}>${q.o[j]}</button>`).join('');b.querySelectorAll('button').forEach(x=>x.onclick=()=>{if(q.a<0||+x.dataset.j===q.a)ok++;i++;go()})};go()}
+const WORDS=['planet','garden','orange','rocket','island','guitar','bridge'];
+const COL=[['RED','#ef4444'],['BLUE','#3b82f6'],['YELLOW','#eab308'],['PINK','#ec4899']];
+const TASKS=[
+{id:'math',p:10,en:'Math Challenge',ur:'ریاضی چیلنج',run:(b,d)=>ask(b,()=>{const x=rnd(40)+10,y=rnd(40)+10;return{q:`${x} + ${y} = ?`,a:String(x+y)}},3,d)},
+{id:'word',p:10,en:'Word Unscramble',ur:'الفاظ کی ترتیب',run:(b,d)=>ask(b,()=>{const w=pick(WORDS);let s;do s=shuf([...w]).join('');while(s==w);return{q:'🔤 '+s.toUpperCase(),a:w}},3,d)},
+{id:'click',p:15,en:'Speed Clicker',ur:'تیز کلک',run:(b,d)=>{let c=0,st=0;b.innerHTML=`<p class=q>${t('tap30')}</p><button class=btn style=height:110px;font-size:32px>0</button>`;const k=b.querySelector('button');k.onclick=()=>{if(!st){st=1;to(()=>{k.disabled=1;d(0)},1e4)}k.textContent=++c;if(c>=30){k.disabled=1;d(1)}}}},
+{id:'color',p:15,en:'Color Match',ur:'رنگ ملاؤ',run:(b,d)=>quiz(b,Array.from({length:4},()=>{const w=pick(COL),c=pick(COL.filter(x=>x!=w)),o=shuf(COL);return{q:`<b style="color:${c[1]};font-size:34px">${w[0]}</b><br>${t('ink')}`,o:o.map(x=>x[0]),a:o.indexOf(c)}}),3,d)},
+{id:'survey',p:20,en:'Quick Survey',ur:'فوری سروے',run:(b,d)=>quiz(b,[{q:'How often do you use rewards apps?',o:['Daily','Weekly','Rarely'],a:-1},{q:'Which prize do you like most?',o:['Cash','Smart Watch','iPhone'],a:-1},{q:'How did you find us?',o:['Friend','Social media','Search'],a:-1}],0,d)},
+{id:'emoji',p:20,en:'Emoji Puzzle',ur:'ایموجی پہیلی',run:(b,d)=>quiz(b,[{q:'🦁👑',o:['Lion King','Frozen','Cars'],a:0},{q:'🕷️🧑',o:['Batman','Spider-Man','Thor'],a:1},{q:'🌧️☀️',o:['Rainbow','Snow','Storm'],a:0},{q:'⭐🐟',o:['Dolphin','Starfish','Shark'],a:1}],3,d)},
+{id:'memory',p:25,en:'Memory Card Match',ur:'میموری کارڈ',run:(b,d)=>{const e=shuf([...'🍎🍌🍇🍒🍋🍉'].flatMap(x=>[x,x]));let a=null,lock=0,m=0;b.innerHTML=`<div class=g4>${e.map((x,i)=>`<button class=mc data-i=${i}>?</button>`).join('')}</div>`;b.querySelectorAll('.mc').forEach(c=>c.onclick=()=>{if(lock||c.textContent!='?')return;c.textContent=e[c.dataset.i];if(!a){a=c;return}if(a.textContent==c.textContent){a=null;if(++m==6)d(1)}else{lock=1;const p=a;a=null;to(()=>{p.textContent=c.textContent='?';lock=0},700)}})}},
+{id:'tf',p:25,en:'True or False',ur:'صحیح یا غلط',run:(b,d)=>quiz(b,[['The Sun is a star.',0],['Karachi is the capital of Pakistan.',1],['Water boils at 100°C at sea level.',0],['Spiders have six legs.',1],['K2 is the second-highest mountain.',0]].map(x=>({q:x[0],o:['True','False'],a:x[1]})),4,d)},
+{id:'scratch',p:30,en:'Scratch Card',ur:'سکریچ کارڈ',run:(b,d)=>{b.innerHTML=`<div style="position:relative;width:280px;height:140px;margin:auto"><div class=prize>${t('lucky')}</div><canvas width=280 height=140 style="position:absolute;left:0;top:0;touch-action:none;border-radius:12px"></canvas></div>`;const c=b.querySelector('canvas'),x=c.getContext('2d');x.fillStyle='#64748b';x.fillRect(0,0,280,140);x.fillStyle='#fff';x.font='16px sans-serif';x.fillText('SCRATCH HERE',82,75);x.globalCompositeOperation='destination-out';let n=0,f=0;const sc=e=>{if(!e.buttons||f)return;const r=c.getBoundingClientRect();x.beginPath();x.arc(e.clientX-r.left,e.clientY-r.top,16,0,7);x.fill();if(++n%8==0){const p=x.getImageData(0,0,280,140).data;let z=0;for(let i=3;i<p.length;i+=4)if(!p[i])z++;if(z>280*140*.45){f=1;d(1)}}};c.onpointermove=sc;c.onpointerdown=sc}},
+{id:'spin',p:30,en:'Lucky Spin Wheel',ur:'خوش قسمت وہیل',run:(b,d)=>{b.innerHTML=`<div class=ptr>▼</div><div class=wheel></div><button class=btn>${t('spin')}</button>`;const w=b.querySelector('.wheel'),s=b.querySelector('.btn');s.onclick=()=>{s.disabled=1;w.style.transform=`rotate(${1440+rnd(360)}deg)`;to(()=>d(1),4300)}}},
+{id:'guess',p:40,en:'Guess Number',ur:'نمبر بوجھو',run:(b,d)=>{const n=rnd(100)+1;let l=7;b.innerHTML=`<p class=q>${t('thr')} <b id=l>${l}</b></p><input id=g type=number><button class=btn>OK</button><p class=q id=h></p>`;const g=b.querySelector('#g'),h=b.querySelector('#h');b.querySelector('.btn').onclick=()=>{const v=+g.value;if(v==n)return d(1);b.querySelector('#l').textContent=--l;h.textContent=v<n?'⬆':'⬇';g.value='';if(!l){h.textContent=t('lost')+' '+n;d(0)}}}},
+{id:'star',p:40,en:'Catch Star',ur:'ستارہ پکڑو',run:(b,d)=>{let c=0,f=0;b.innerHTML=`<p class=q><span id=c>0</span>/8</p><div class=arena><button>⭐</button></div>`;const s=b.querySelector('.arena button'),mv=()=>{s.style.left=rnd(85)+'%';s.style.top=rnd(80)+'%'};mv();iv(mv,900);s.onclick=()=>{if(f)return;b.querySelector('#c').textContent=++c;if(c>=8){f=1;d(1)}else mv()};to(()=>{if(!f){f=1;d(0)}},15000)}},
+{id:'rating',p:50,en:'App Rating Survey',ur:'ایپ ریٹنگ سروے',run:(b,d)=>{let r=0;b.innerHTML=`<p class=q>${t('rate')}</p><div class=stars>${[1,2,3,4,5].map(i=>`<span data-i=${i}>☆</span>`).join('')}</div><button class=btn>${t('submit')}</button>`;const st=b.querySelectorAll('.stars span');st.forEach(s=>s.onclick=()=>{r=+s.dataset.i;st.forEach((x,j)=>x.textContent=j<r?'★':'☆')});b.querySelector('.btn').onclick=()=>r?d(1):toast(t('pickrate'),1)}},
+{id:'pattern',p:60,en:'Pattern Lock',ur:'پیٹرن لاک',run:(b,d)=>{const p=shuf([0,1,2,3,4,5,6,7,8]).slice(0,5);let u=0,on=0;b.innerHTML=`<p class=q id=m>${t('watch')}</p><div class=g3>${[...Array(9)].map((_,i)=>`<button class=dot data-i=${i}></button>`).join('')}</div>`;const D=b.querySelectorAll('.dot');p.forEach((x,i)=>{to(()=>D[x].classList.add('on'),600*i+400);to(()=>D[x].classList.remove('on'),600*i+900)});to(()=>{on=1;b.querySelector('#m').textContent=t('repeat')},600*p.length+700);D.forEach(x=>x.onclick=()=>{if(!on)return;if(+x.dataset.i!=p[u]){on=0;return d(0)}x.classList.add('on');if(++u==p.length){on=0;d(1)}})}},
+{id:'grand',p:110,en:'Grand Master Quiz',ur:'گرینڈ ماسٹر کوئز',run:(b,d)=>quiz(b,[{q:'Largest planet?',o:['Saturn','Jupiter','Neptune'],a:1},{q:'Founder of Pakistan?',o:['Liaquat Ali Khan','Allama Iqbal','Muhammad Ali Jinnah'],a:2},{q:'Chemical symbol for gold?',o:['Au','Ag','Gd'],a:0},{q:'Largest ocean?',o:['Atlantic','Indian','Pacific'],a:2},{q:'12 × 12 = ?',o:['124','144','164'],a:1},{q:"Pakistan's national sport?",o:['Cricket','Field hockey','Squash'],a:1}],5,d)}
+];
+
+/* ---------- task flow ---------- */
+function openTask(i){
+  const k=TASKS[i];if((S.user.last?.[k.id]||0)+864e5>Date.now())return;
+  let done=0;$('#mt').textContent=k[S.lang];$('#mc').textContent=t('close');$('#mod').classList.add('s');const box=$('#mg');
+  const d=ok=>{if(done)return;clearT();if(ok){done=1;box.innerHTML='<p class=q>⏳</p>';finish(i)}else{box.innerHTML=`<p class=q>${t('failed')}</p>`;const r=document.createElement('button');r.className='btn';r.textContent=t('retry');r.onclick=go;box.append(r)}};
+  const go=()=>{clearT();box.innerHTML='';k.run(box,d)};go();
+}
+async function finish(i){
+  const k=TASKS[i];
+  try{const r=await api('/task/complete',{task:k.id,day:today()});S.user=r.user;save();closeM();toast(`+${k.p} ${t('pts')} 🎉`);render()}
+  catch(e){$('#mg').innerHTML=`<p class=q>${esc(e.message)}</p><button class=btn onclick="finish(${i})">${t('retry')}</button>`}
+}
+function closeM(){clearT();$('#mod').classList.remove('s');$('#mg').innerHTML=''}
+
+/* ---------- auth ---------- */
+async function auth(){
+  const email=$('#em').value.trim(),password=$('#pw').value,referral=($('#rf')?.value||'').trim().toUpperCase();
+  if(!/^\S+@\S+\.\S+$/.test(email)||password.length<6)return toast(t('invalid'),1);
+  const btn=$('#ab');btn.disabled=1;
+  try{const r=await api(S.mode=='login'?'/login':'/register',{email,password,...(S.mode=='register'&&referral?{referral}:{})});S.token=r.token;S.user=r.user;S.tab='home';save();render();refreshRef()}
+  catch(e){toast(e.message,1);btn.disabled=0}
+}
+function refreshRef(){api('/referral',{}).then(r=>{S.user.referrals=r.count;save();if(S.tab=='home')render()}).catch(()=>{})}
+function logout(){S.token=S.user=null;save();render()}
+const authPg=()=>`<div class=card><h3>${t(S.mode)}</h3><input id=em type=email placeholder="${t('email')}"><input id=pw type=password placeholder="${t('pass')}">${S.mode=='register'?`<input id=rf placeholder="${t('ref')}" value="${esc(S.refq)}">`:''}<button class=btn id=ab onclick=auth()>${t(S.mode)}</button><p class=m style="text-align:center;margin-top:12px;color:var(--g);cursor:pointer" onclick="S.mode=S.mode=='login'?'register':'login';render()">${t(S.mode=='login'?'noacc':'haveacc')}</p></div>`;
+
+/* ---------- pages ---------- */
+const TIERS=[['small',5000,6000],['bigger',10000,10000],['biggest',15000,15000],['mega',20000,20000]];
+function cal(){
+  const n=new Date(),y=n.getFullYear(),m=n.getMonth(),dim=new Date(y,m+1,0).getDate(),off=new Date(y,m,1).getDay(),k=`${y}-${pad(m+1)}-`,set=new Set(S.user.days||[]);
+  return`<div class=cal>${'<i></i>'.repeat(off)}${Array.from({length:dim},(_,i)=>i+1).map(d=>`<i class="${set.has(k+pad(d))?'on':''} ${d==n.getDate()?'today':''}">${d}</i>`).join('')}</div>`
+}
+function home(){
+  const u=S.user,nx=TIERS.find(x=>u.points<x[2])||TIERS[3],n=u.referrals||0,mon=new Date().toLocaleDateString(S.lang=='ur'?'ur-PK':'en-US',{month:'long',year:'numeric'});
+  return`<div class=card style="text-align:center"><small>${t('points')}</small><div style="color:var(--g);font-size:46px;font-weight:800">${u.points}</div><div class=bar><i style="width:${Math.min(100,u.points/nx[2]*100)}%"></i></div><small>${t(nx[0])} · ${nx[2]} ${t('pts')}</small></div>
+  <div class="ad a300">300x250</div>
+  <div class=card><h3>${t('cal')} · ${mon}</h3>${cal()}</div>
+  <div class=card><h3>${t('mycode')}</h3><div style="color:var(--g);font-size:24px;font-weight:800;direction:ltr">${esc(u.code)}</div><p class=m>${n>=5?`<span style="color:#f59e0b">${t('limit')}</span>`:`${n}/5 ${t('refs')}`}</p><button class=btn onclick="navigator.clipboard?.writeText('${esc(u.code)}').then(()=>toast(t('copied')))">${t('copy')}</button></div>`
+}
+function tasksPg(){
+  return`<div class=card>${TASKS.map((k,i)=>{const r=(S.user.last?.[k.id]||0)+864e5,w=r-Date.now();return`<div class=row><div>${i+1}. ${k[S.lang]}<br><small>+${k.p} ${t('pts')}</small></div>${w>0?`<span class=cd data-cd=${r}>${fmt(w)}</span>`:`<button class="btn s" onclick=openTask(${i})>${t('start')}</button>`}</div>`}).join('')}</div>`
+}
+function prizesPg(){
+  const u=S.user,tk=u.tickets||[];
+  return`<div class=card>${TIERS.map(x=>`<div style="margin-bottom:12px"><b>${t(x[0])}</b><div class=bar><i style="width:${Math.min(100,u.points/x[2]*100)}%"></i></div><small>${Math.min(u.points,x[2])}/${x[2]} ${t('pts')}</small></div>`).join('')}</div>
+  <div class=card><h3>🎟️ ${t('draw')}</h3><p class=m>${t('drawinfo')}</p><button class=btn ${u.points<500?'disabled':''} onclick=enterDraw()>${u.points<500?t('need500'):t('enter')}</button><h3 style="margin-top:14px">${t('mytk')} (${tk.length})</h3><p style="direction:ltr;word-break:break-all">${tk.length?tk.map(x=>'#'+esc(x)).join(' · '):t('none')}</p></div>`
+}
+async function enterDraw(){try{const r=await api('/draw/enter',{});S.user=r.user;save();toast(`${t('ticket')} #${r.ticket} 🎟️`);render()}catch(e){toast(e.message,1)}}
+function walletPg(){
+  const h=S.user.withdrawals||[];
+  return`<div class=card><h3>💸 ${t('wallet')}</h3><select id=wm><option>JazzCash</option><option>EasyPaisa</option><option>Bank</option></select><input id=wa type=number inputmode=numeric placeholder="${t('amount')}"><input id=wc placeholder="${t('account')}"><button class=btn id=wb onclick=withdraw()>${t('submit')}</button></div>
+  <div class=card><h3>${t('hist')}</h3>${h.length?h.map(x=>`<div class=row><span>${esc(x.method)} · ${esc(x.account)}<br><small>${esc(x.date||'')}</small></span><span style="text-align:end">Rs. ${esc(x.amount)}<br><small>${esc(x.status||'pending')}</small></span></div>`).join(''):`<p class=m>${t('none')}</p>`}</div>`
+}
+async function withdraw(){
+  const method=$('#wm').value,amount=+$('#wa').value,account=$('#wc').value.trim(),tier=TIERS.find(x=>x[1]>=amount);
+  if(!(amount>=5000)||!tier||S.user.points<tier[2]||account.length<6)return toast(t('wdinv'),1);
+  $('#wb').disabled=1;
+  try{const r=await api('/withdraw',{method,amount,account});S.user=r.user;save();toast(t('wdok'));render()}catch(e){toast(e.message,1);$('#wb').disabled=0}
+}
+const boardPg=()=>`<div class=card><h3>🏆 ${t('board')}</h3><div id=lb>${t('loading')}</div></div>`;
+async function loadBoard(){
+  try{const r=await api('/leaderboard'),a=(r.users||r).slice(0,10),el=$('#lb');if(!el)return;
+    el.innerHTML=a.length?a.map((x,i)=>{const me=x.code&&x.code==S.user.code;return`<div class="row ${me?'me':''}"><span>${i+1}. ${esc(x.name||'—')}${me?` (${t('you')})`:''}</span><b>${esc(x.points)}</b></div>`}).join(''):t('none')}
+  catch(e){const el=$('#lb');if(el)el.textContent=e.message}
+}
+
+/* ---------- shell ---------- */
+const NAV=[['home','🏠'],['tasks','🎯'],['prizes','🏆'],['wallet','💸'],['board','📊']];
+function render(){
+  document.body.classList.toggle('ur',S.lang=='ur');document.documentElement.lang=S.lang;document.documentElement.dir=S.lang=='ur'?'rtl':'ltr';
+  const pg={home,tasks:tasksPg,prizes:prizesPg,wallet:walletPg,board:boardPg};
+  $('#app').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:var(--g);font-size:20px;direction:ltr">MegaRewards Pro</b><span style="display:flex;gap:6px"><button class="btn s" onclick="S.lang=S.lang=='en'?'ur':'en';save();render()">${S.lang=='en'?'اردو':'English'}</button>${S.user?'<button class="btn s btn2" onclick=logout()>⎋</button>':''}</span></div>${S.user?pg[S.tab]():authPg()}<div class="ad a320">320x50</div>`;
+  $('#nav').innerHTML=S.user?NAV.map(n=>`<button class="${S.tab==n[0]?'a':''}" onclick="S.tab='${n[0]}';render()">${n[1]}<br>${t(n[0]=='board'?'board':n[0])}</button>`).join(''):'';
+  if(S.user&&S.tab=='board')loadBoard();
+}
+setInterval(()=>{for(const e of document.querySelectorAll('[data-cd]')){const w=e.dataset.cd-Date.now();if(w<=0){render();break}e.textContent=fmt(w)}},1000);
+render();if(S.token)refreshRef();
+</script></body></html>
